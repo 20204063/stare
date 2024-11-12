@@ -7,30 +7,40 @@ public class AlwaysLookAt : MonoBehaviour
     public Transform Target;
     private Transform loclaTrans;
 
+    float fixedYValue = -90f;
+    float fixedZValue = -90f;
+
+    Vector3 fixedValue;
+
     // Start is called before the first frame update
     void Start()
     {
-        
+        fixedValue = new Vector3(0, 0, 0);
     }
 
     // Update is called once per frame
     void Update()
     {
 
-        transform.LookAt(new Vector3(Target.position.x, Target.position.y , Target.position.z));
-        //transform.LookAt(new Vector3(Target.position.x, transform.position.y, Target.position.y));
-
-        LimitRot();
+        LookAt();
     }
 
-    private void LimitRot()
+    
+
+    private void LookAt()
     {
-        Vector3 EyesEulerAngles = transform.rotation.eulerAngles;
 
-        EyesEulerAngles.y = (EyesEulerAngles.y > 180) ? EyesEulerAngles.y - 360 : EyesEulerAngles.y;
-        EyesEulerAngles.y = Mathf.Clamp(EyesEulerAngles.y, 40, 160);
+        transform.LookAt(new Vector3(Target.position.x, Target.position.y, Target.position.z));
 
-        transform.rotation = Quaternion.Euler(EyesEulerAngles);
+
+        Vector3 EyesEulerAngles = transform.localRotation.eulerAngles;
+
+        
+
+        EyesEulerAngles.x = (EyesEulerAngles.x > 180) ? EyesEulerAngles.x - 360 : EyesEulerAngles.x;
+        EyesEulerAngles.x = Mathf.Clamp(EyesEulerAngles.x, 25, 160);
+
+        transform.localRotation = Quaternion.Euler(EyesEulerAngles);
 
     }
 }
