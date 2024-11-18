@@ -38,7 +38,7 @@ public class AlwaysLookAt : MonoBehaviour
         
 
         EyesEulerAngles.x = (EyesEulerAngles.x > 180) ? EyesEulerAngles.x - 360 : EyesEulerAngles.x;
-        EyesEulerAngles.x = Mathf.Clamp(EyesEulerAngles.x, 25, 160);
+        EyesEulerAngles.x = Mathf.Clamp(EyesEulerAngles.x, 35, 145);
 
         transform.localRotation = Quaternion.Euler(EyesEulerAngles);
 
