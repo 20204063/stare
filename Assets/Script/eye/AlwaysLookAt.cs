@@ -7,15 +7,15 @@ public class AlwaysLookAt : MonoBehaviour
     public Transform Target;
     private Transform loclaTrans;
 
-    float fixedYValue = -90f;
-    float fixedZValue = -90f;
+    //private float fixedYValue = -90f;
+    //private float fixedZValue = -90f;
 
-    Vector3 fixedValue;
+    //Vector3 fixedValue;
 
     // Start is called before the first frame update
     void Start()
     {
-        fixedValue = new Vector3(0, 0, 0);
+        //fixedValue = new Vector3(0, 0, 0);
     }
 
     // Update is called once per frame

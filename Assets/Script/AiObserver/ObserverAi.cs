@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.ComponentModel;
 using UnityEngine;
 using UnityEngine.AI;
 
@@ -8,6 +9,7 @@ public class ObserverAi : MonoBehaviour
     GameObject player;
 
     NavMeshAgent agent;
+
 
     [SerializeField] LayerMask groundLayer; // NavMeshSurface가 속한 레이어
     [SerializeField] float range;
