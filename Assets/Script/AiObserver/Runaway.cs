@@ -20,9 +20,7 @@ public class Runaway : MonoBehaviour
     public Animator animator;
     // Start is called before the first frame update
     void Start()
-    {
-        animator = GetComponent<Animator>();
-
+    { 
         if (npc == null)
             if (!TryGetComponent(out npc))
                 Debug.LogWarning(name + "need a navemesh agent");
@@ -42,6 +40,9 @@ public class Runaway : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+
+
+
         if (player == null || npc == null) return;
 
         // 플레이어와 NPC 간 거리 계산
@@ -50,7 +51,7 @@ public class Runaway : MonoBehaviour
         // 작동 조건: 플레이어가 특정 거리(triggerDistance) 이내에 있을 때만 실행
         if (distance > triggerDistance) 
         {
-            animator.SetBool("isAnimation", false);
+           
 
             return;
         }
